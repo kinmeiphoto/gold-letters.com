@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヒーロー案 3パターン｜Gold Letters LP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700;900&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  body{padding-bottom:0}
+  .picker-bar{position:sticky;top:0;z-index:200;background:#16181c;color:#fff;padding:14px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;text-align:center;font-size:14px}
+  .picker-bar strong{color:#d8b066;font-family:"Marcellus",serif;letter-spacing:.06em}
+  .picker-bar a{color:#fff;border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:40px;font-weight:700;font-size:13px;transition:.2s}
+  .picker-bar a:hover{background:#fff;color:#16181c}
+  .variant-label{position:absolute;top:18px;left:18px;z-index:20;background:var(--red);color:#fff;font-family:"Marcellus",serif;letter-spacing:.1em;font-size:14px;padding:8px 18px;border-radius:40px;box-shadow:0 8px 18px -6px rgba(230,0,18,.6)}
+  .variant-note{position:absolute;top:18px;right:18px;z-index:20;background:rgba(20,24,30,.78);color:#fff;font-size:12.5px;padding:8px 16px;border-radius:40px;backdrop-filter:blur(6px)}
+  .hero-wrap{position:relative;border-bottom:3px solid #16181c}
+
+  /* ---- 案B: cinematic dark ---- */
+  .heroB{position:relative;min-height:88vh;display:grid;place-items:center;overflow:hidden;background:#0e0f12;text-align:center;color:#fff}
+  .heroB-video,.heroB-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .heroB-overlay{position:absolute;inset:0;z-index:1;background:
+     radial-gradient(120% 90% at 50% 20%,rgba(14,15,18,.35),rgba(14,15,18,.82) 75%),
+     linear-gradient(180deg,rgba(14,15,18,.5),rgba(14,15,18,.7))}
+  .heroB-inner{position:relative;z-index:2;max-width:860px;padding:90px 24px}
+  .heroB .eyebrow{font-family:"Marcellus",serif;letter-spacing:.3em;color:var(--gold-light);font-size:15px;margin-bottom:22px}
+  .heroB h1{font-size:64px;font-weight:900;line-height:1.18;margin-bottom:24px}
+  .heroB p{font-size:18px;color:#d6d9de;max-width:620px;margin:0 auto 38px;line-height:1.9}
+  .heroB .hero-actions{justify-content:center}
+
+  /* ---- 案C: product showcase ---- */
+  .heroC{position:relative;background:linear-gradient(180deg,#fbf8f2,#f4f5f7);overflow:hidden}
+  .heroC::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 92% 10%,rgba(184,137,61,.18),transparent 60%)}
+  .heroC-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;padding:84px 24px}
+  .heroC h1{font-size:54px;font-weight:900;line-height:1.18;color:var(--ink);margin-bottom:24px}
+  .heroC .lead{font-size:17px;color:var(--ink-soft);max-width:520px;margin-bottom:34px;line-height:1.9}
+  .heroC-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:480px}
+  .heroC-collage figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-card);position:relative}
+  .heroC-collage img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .heroC-collage figure:hover img{transform:scale(1.06)}
+  .heroC-collage .c-big{grid-row:span 2}
+  @media (max-width:860px){
+    .heroB h1{font-size:42px}
+    .heroC-grid{grid-template-columns:1fr;gap:36px;padding:56px 24px}
+    .heroC h1{font-size:38px}
+    .heroC-collage{height:380px}
+  }
+  @media (max-width:560px){
+    .heroB h1{font-size:33px}
+    .heroC h1{font-size:31px}
+    .heroC-collage{height:300px}
+  }
+</style>
+</head>
+<body>
+
+<div class="picker-bar">
+  <span>ヒーロー <strong>3案</strong> ─ ご希望の番号（案A / 案B / 案C）をお知らせいただければ本番(index)に適用します。</span>
+  <a href="index.html">→ 本番LPを見る</a>
+</div>
+
+<!-- ============ 案A : Split Editorial（現在の本番） ============ -->
+<div class="hero-wrap">
+  <span class="variant-label">案A</span>
+  <span class="variant-note">スプリット型・明るい / 信頼感×製品実機</span>
+  <section class="hero hero-a" style="padding-top:8px">
+    <div class="hero-deco" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow"><span class="eb-line"></span>DIGITAL HOT FOIL STAMPING</p>
+        <h1 class="hero-title">箔押しを、<br><span class="foil">プリンターのように。</span></h1>
+        <p class="hero-lead">
+          文字を入力して、ボタンを押すだけ。ライブカメラで位置を合わせ、
+          圧力・温度・時間はすべて自動制御。<strong>1個のパーソナライズから量産まで</strong>、
+          誰でも均一で美しい金箔の仕上がりを。
+        </p>
+        <div class="hero-actions">
+          <a href="index.html#contact" class="btn-rich">
+            <span class="br-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></span>
+            <span class="br-text"><span class="br-main">無料お見積もり・デモ依頼</span><span class="br-sub">サンプル加工 無料 ／ 最短即日でご返信</span></span>
+            <span class="br-arw" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="btn-ghost">製品を詳しく見る<span class="arw">›</span></a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>1<span class="u">秒</span></strong><span>／文字（レターホイール）</span></li>
+          <li><strong>140<span class="u">文字</span></strong><span>を1セットに混在</span></li>
+          <li><strong>75<span class="u">年</span></strong><span>の印刷イノベーション</span></li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <figure class="hero-photo">
+          <img src="https://gold-letters.com/wp-content/uploads/2024/03/embosser-machine-1024x683.jpg" alt="Gold Letters デジタル箔押し機 本体">
+          <figcaption class="hero-tag"><span class="dot"></span>LIVE CAMERA で位置決め → そのまま押印</figcaption>
+        </figure>
+        <div class="hero-chip">
+          <span class="chip-num">★</span>
+          <span class="chip-txt">英国 <strong>Printweek</strong> 掲載<br>「品質は文句なし」</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 案B : Cinematic / Video Dark ============ -->
+<div class="hero-wrap">
+  <span class="variant-label">案B</span>
+  <span class="variant-note">動画背景・ダーク / 高級感・没入感を最大化</span>
+  <section class="heroB">
+    <video class="heroB-video" autoplay muted loop playsinline
+           poster="https://gold-letters.com/wp-content/uploads/2024/03/embosser-machine-1024x683.jpg">
+      <source src="https://gold-letters.com/wp-content/uploads/2025/07/bg-header2.mp4" type="video/mp4">
+    </video>
+    <div class="heroB-overlay" aria-hidden="true"></div>
+    <div class="heroB-inner">
+      <p class="eyebrow">GOLD LETTERS — DIGITAL EMBOSSING</p>
+      <h1>その金箔が、<br><span class="foil-l">ブランドの価値になる。</span></h1>
+      <p>コンピューター制御の全自動箔押し機。位置決めも、圧力・温度・時間も、すべて自動。
+         手作業の限界を超える、プロ品質のホットスタンプを。</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn-rich">
+          <span class="br-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></span>
+          <span class="br-text"><span class="br-main">無料お見積もり・デモ依頼</span><span class="br-sub">サンプル加工 無料 ／ 最短即日でご返信</span></span>
+          <span class="br-arw" aria-hidden="true">→</span>
+        </a>
+        <a href="#" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)">仕上がり例を見る<span class="arw">›</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 案C : Product Showcase ============ -->
+<div class="hero-wrap">
+  <span class="variant-label">案C</span>
+  <span class="variant-note">事例コラージュ型 / 「何が作れるか」を即訴求</span>
+  <section class="heroC">
+    <div class="container heroC-grid">
+      <div>
+        <p class="hero-eyebrow"><span class="eb-line"></span>WHAT YOU CAN CREATE</p>
+        <h1>革も、紙も、ケースも。<br><span class="foil">名入れ箔押し、自由自在。</span></h1>
+        <p class="lead">
+          革製品・書籍・パッケージ・スマホケースまで。Gold Letters なら、
+          ライブカメラで位置を合わせて完成品に直接、1個から美しく箔押しできます。
+        </p>
+        <div class="hero-actions">
+          <a href="index.html#contact" class="btn-rich">
+            <span class="br-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></span>
+            <span class="br-text"><span class="br-main">あなたの製品で無料サンプル加工</span><span class="br-sub">最短即日でご返信 ／ お見積もり無料</span></span>
+            <span class="br-arw" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="heroC-collage">
+        <figure class="c-big"><img src="https://gold-letters.com/wp-content/uploads/2025/08/foil-embossing-on-leather-book-cover.webp" alt="革表紙への箔押し"></figure>
+        <figure><img src="https://gold-letters.com/wp-content/uploads/2025/08/foil-stamping-on-phone-case.webp" alt="スマホケースへの箔押し"></figure>
+        <figure><img src="https://gold-letters.com/wp-content/uploads/2025/08/foil-imprinting-on-passport-cover.webp" alt="パスポートカバーへの箔押し"></figure>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

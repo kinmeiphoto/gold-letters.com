@@ -378,12 +378,17 @@ ul,ol{list-style:none}
 .logo-footer .logo-text{color:#fff}
 .logo-footer .logo-text small{color:#8b9098}
 .footer-desc{margin-top:18px;font-size:13.5px;line-height:1.95;color:#969ca5;max-width:340px}
-.footer-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .footer-col h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px;letter-spacing:.04em}
+.footer-col h4.sr-hide{visibility:hidden}
 .footer-col a{display:block;font-size:13.5px;color:#969ca5;padding:6px 0;transition:.2s}
 .footer-col a:hover{color:var(--gold-light);transform:translateX(3px)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
 .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;font-size:12.5px;color:#7c828b;flex-wrap:wrap;gap:8px}
+.footer-legal{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-legal a{color:#969ca5;transition:.2s}
+.footer-legal a:hover{color:var(--gold-light)}
+.footer-legal .footer-contact{color:#7c828b}
 
 /* ---------- Sticky mobile CTA ---------- */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:95;display:none;gap:0;background:#fff;box-shadow:0 -6px 20px rgba(20,24,30,.16);padding:10px 12px;gap:10px}

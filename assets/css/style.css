@@ -125,6 +125,8 @@ ul,ol{list-style:none}
 .header-main{background:#fff}
 .header-inner{display:flex;align-items:center;height:74px;gap:32px}
 .logo{display:flex;align-items:center;gap:12px}
+.logo-img{height:60px;width:auto;display:block}
+.logo-img-footer{height:78px}
 .logo-mark{
   width:44px;height:44px;display:grid;place-items:center;
   background:linear-gradient(135deg,#caa052,var(--gold) 55%,var(--gold-deep));

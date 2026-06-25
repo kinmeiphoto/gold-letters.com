@@ -62,6 +62,32 @@
     revealTargets.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // --- Article modal ---
+  var modal = document.getElementById('articleModal');
+  var openArticle = document.getElementById('openArticle');
+  if (modal && openArticle) {
+    var lastFocus = null;
+    var openModal = function () {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+      var closeBtn = modal.querySelector('.modal-close');
+      if (closeBtn) closeBtn.focus();
+    };
+    var closeModal = function () {
+      modal.hidden = true;
+      document.body.classList.remove('modal-open');
+      if (lastFocus) lastFocus.focus();
+    };
+    openArticle.addEventListener('click', openModal);
+    modal.querySelectorAll('[data-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  }
+
   // --- FAQ: single-open accordion ---
   var faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function (item) {

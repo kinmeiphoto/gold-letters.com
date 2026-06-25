@@ -185,6 +185,7 @@ ul,ol{list-style:none}
 .sec-eyebrow.light{color:var(--gold-light)}
 .sec-title{font-size:36px;font-weight:900;line-height:1.34;color:var(--ink);position:relative;padding-left:18px}
 .sec-title::before{content:"";position:absolute;left:0;top:.16em;bottom:.16em;width:5px;background:var(--red);border-radius:2px}
+.section-head.center .sec-eyebrow{display:block}
 .section-head.center .sec-title{padding-left:0;display:inline-block}
 .section-head.center .sec-title::before{display:none}
 .section-head.center .sec-title::after{content:"";display:block;width:60px;height:4px;background:var(--red);margin:18px auto 0;border-radius:2px}

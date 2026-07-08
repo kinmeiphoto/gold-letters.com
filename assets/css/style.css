@@ -304,6 +304,12 @@ ul,ol{list-style:none}
 .step-list{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .step-item{position:relative;background:#fff;border-radius:var(--radius);padding:40px 30px 34px;box-shadow:0 6px 22px -12px rgba(20,24,30,.22)}
 .step-item::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:var(--radius) var(--radius) 0 0}
+.step-media{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#14100a;margin-bottom:22px}
+.step-media video{width:100%;height:100%;object-fit:cover;display:block}
+.step-num{position:absolute;top:12px;left:12px;z-index:2;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold-btn-1),var(--gold-btn-3));color:var(--gold-on);
+  font-family:"Marcellus",serif;font-weight:700;font-size:21px;line-height:1;
+  box-shadow:0 6px 16px -4px rgba(166,124,43,.6),inset 0 1px 0 rgba(255,255,255,.5)}
 .step-no{display:inline-block;font-family:"Marcellus",serif;font-size:14px;letter-spacing:.14em;color:var(--red);margin-bottom:14px}
 .step-item h3{font-size:20px;font-weight:700;margin-bottom:12px}
 .step-item p{font-size:14.5px;color:var(--gray)}

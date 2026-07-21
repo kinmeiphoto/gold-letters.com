@@ -28,20 +28,6 @@
     }, { passive: true });
   }
 
-  // --- Primary "quote" rich button → jump to contact channels ---
-  var quoteBtn = document.getElementById('quoteBtn');
-  if (quoteBtn) {
-    quoteBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var mail = document.querySelector('.channel-primary');
-      if (mail) {
-        mail.classList.add('flash');
-        mail.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        window.location.href = mail.getAttribute('href');
-      }
-    });
-  }
-
   // --- Scroll reveal animation ---
   var revealTargets = document.querySelectorAll(
     '.problem-card, .feature-card, .step-item, .material-card, .testimonial, .section-head, .solution-text, .solution-figure, .industry-list, .compare-table, .spec-table, .g-item, .cta-band-inner'

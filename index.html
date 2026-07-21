@@ -153,8 +153,13 @@
       </ul>
     </div>
     <figure class="solution-figure">
-      <img src="https://gold-letters.com/wp-content/uploads/2024/02/Hot-Foil-Stamping-Machine-.jpg"
-           alt="Gold Letters ホットフォイル箔押し機の操作の様子" loading="lazy">
+      <button type="button" class="video-thumb" id="openVideo" aria-label="Gold Letter デモ動画を再生する">
+        <img src="assets/img/goldletter-demo.webp" alt="Gold Letter デジタル箔押し機のデモ環境" loading="lazy">
+        <span class="video-play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="video-cap">クリックでデモ動画を再生 ▶</span>
+      </button>
     </figure>
   </div>
 </section>
@@ -591,6 +596,15 @@
         <span class="br-arw" aria-hidden="true">→</span>
       </a>
     </div>
+  </div>
+</div>
+
+<!-- ========== VIDEO MODAL ========== -->
+<div class="modal video-modal" id="videoModal" hidden>
+  <div class="modal-backdrop" data-vclose></div>
+  <div class="video-dialog" role="dialog" aria-modal="true" aria-label="Gold Letter デモ動画">
+    <button class="video-close" type="button" data-vclose aria-label="閉じる">×</button>
+    <div class="video-frame" id="videoFrame" data-video="nhmmYEiaZRY"></div>
   </div>
 </div>
 

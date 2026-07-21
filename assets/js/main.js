@@ -74,6 +74,35 @@
     });
   }
 
+  // --- Video modal (YouTube) ---
+  var videoModal = document.getElementById('videoModal');
+  var openVideo = document.getElementById('openVideo');
+  var videoFrame = document.getElementById('videoFrame');
+  if (videoModal && openVideo && videoFrame) {
+    var vid = videoFrame.getAttribute('data-video');
+    var openVideoModal = function () {
+      videoFrame.innerHTML =
+        '<iframe src="https://www.youtube.com/embed/' + vid +
+        '?autoplay=1&rel=0" title="Gold Letter デモ動画" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+        'allowfullscreen></iframe>';
+      videoModal.hidden = false;
+      document.body.classList.add('modal-open');
+    };
+    var closeVideoModal = function () {
+      videoModal.hidden = true;
+      videoFrame.innerHTML = ''; // stop playback
+      document.body.classList.remove('modal-open');
+    };
+    openVideo.addEventListener('click', openVideoModal);
+    videoModal.querySelectorAll('[data-vclose]').forEach(function (el) {
+      el.addEventListener('click', closeVideoModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !videoModal.hidden) closeVideoModal();
+    });
+  }
+
   // --- FAQ: single-open accordion ---
   var faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function (item) {

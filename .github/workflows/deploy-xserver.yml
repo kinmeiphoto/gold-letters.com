@@ -37,12 +37,13 @@ jobs:
       - name: Debug SSH connection
         run: |
           ssh -vvv -i ~/.ssh/id_ed25519 -p "${{ secrets.XSERVER_PORT }}" \
+            -o PubkeyAcceptedAlgorithms=ssh-rsa \
             -o BatchMode=yes -o ConnectTimeout=10 \
             "${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}" "echo SSH_OK" || true
 
       - name: Deploy via rsync
         run: |
           rsync -avz --no-perms --no-owner --no-group \
-            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.XSERVER_PORT }}" \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.XSERVER_PORT }} -o PubkeyAcceptedAlgorithms=ssh-rsa" \
             dist/ \
             "${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:${{ secrets.XSERVER_PATH }}"

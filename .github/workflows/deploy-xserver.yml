@@ -1,0 +1,42 @@
+name: Deploy to Xserver
+
+on:
+  push:
+    branches:
+      - claude/gifted-ramanujan-bI3BG
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build flat package for Xserver
+        run: |
+          mkdir -p dist
+          sed -E 's#assets/(css|js|img|video)/#/#g' index.html \
+            | sed -E 's#(src|href)="/([^"/][^"]*)"#\1="\2"#g' > dist/index.html
+          cp assets/css/style.css dist/style.css
+          cp assets/js/main.js dist/main.js
+          cp assets/img/logo-goldletter.png dist/logo-goldletter.png
+          cp assets/img/logo-kinmei.png dist/logo-kinmei.png
+          cp assets/img/goldletter-demo.webp dist/goldletter-demo.webp
+          cp assets/video/step-1.mp4 dist/step-1.mp4
+          cp assets/video/step-2.mp4 dist/step-2.mp4
+          cp assets/video/step-3.mp4 dist/step-3.mp4
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.XSERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p "${{ secrets.XSERVER_PORT }}" "${{ secrets.XSERVER_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --no-perms --no-owner --no-group \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.XSERVER_PORT }}" \
+            dist/ \
+            "${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:${{ secrets.XSERVER_PATH }}"

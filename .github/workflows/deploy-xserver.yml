@@ -34,6 +34,12 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p "${{ secrets.XSERVER_PORT }}" "${{ secrets.XSERVER_HOST }}" >> ~/.ssh/known_hosts
 
+      - name: Debug SSH connection
+        run: |
+          ssh -vvv -i ~/.ssh/id_ed25519 -p "${{ secrets.XSERVER_PORT }}" \
+            -o BatchMode=yes -o ConnectTimeout=10 \
+            "${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}" "echo SSH_OK" || true
+
       - name: Deploy via rsync
         run: |
           rsync -avz --no-perms --no-owner --no-group \

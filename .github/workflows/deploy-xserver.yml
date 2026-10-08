@@ -3,7 +3,7 @@ name: Deploy to Xserver
 on:
   push:
     branches:
-      - claude/gifted-ramanujan-bI3BG
+      - main
   workflow_dispatch:
 
 jobs:
